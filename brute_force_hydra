@@ -1,0 +1,4 @@
+SSH
+hydra -l named_user -P passlist.txt 192.168.0.100 <ssh|ftp>
+
+hydra -L userlist.txt -P passlist.txt 192.168.0.100 <ssh|ftp>
