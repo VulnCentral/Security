@@ -1,7 +1,36 @@
 
 
+(W) CryptTool -> Enc/Dec -> Algo / Analysis -> Sym- >
 snow
-openstego
+Stego
+	hello world > original.txt
+	snow -C -m "ACCOUNT NUMBER 123" -p "magic" original.txt stegoed.txt
+		-p password
+		-m message
+		-C compression
+	
+ Unstego
+	snow -C -p "magic" stegoed.txt
+	output: ACCOUNT NUMBER 123
+  
+  
+openstego - uses password if given
+quickstego
 
 BCTEXTENCODER
 VERACRYPT
+
+
+(W) hashcalc 
+(W) MD5Caclculator
+(W) Bulk hash -> HashMyFiles
+
+ADS
+Procedure
+	copy calc.exe to c:\magic
+	create readme.txt and write hello word in it
+	type c:\magic\calc.exe > c:\magic\readme.txt:calc.exe
+	now delete calc.exe
+	mklink backdoor.exe readme.txt:calc.exe
+	backdoor.exe
+		calc would be opened,backdoor is just name of link it will open calc.exe in readme file
