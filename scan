@@ -5,3 +5,4 @@ nmap -sS -A -p 1-65535 -Pn 192.168.72.1
 netdiscover -r 192.168.10.1/24
 nmap 192.168.10.10
 nmap -p- -sV 192.168.56.106
+NMAP -sU -p 161 --script=snmp-brute IP
