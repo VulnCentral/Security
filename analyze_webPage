@@ -1,2 +1,19 @@
-wpscan.rb --url http://192.168.1.168/PATH
-./nikto.pl -h http://192.168.111.131/PATH/
+wpscan.rb --url http://<IP>/PATH
+wpscan --url https://<IP>/ --enumerate u
+wpscan --url http://<IP>/ -U 'user_name' -P /path-to/dic.txt
+
+
+./nikto.pl -h http://<IP>/PATH/
+
+msfconsole -q
+search wordpress
+
+use auxiliary/scanner/http/wordpress_login_enum
+show options
+
+set RHOSTS <TARGET_IP>
+set USERNAME <user>
+set PASS_FILE /path to file/
+set TARGETURI <http://<IP>:PORT/PATH>
+set VERBOSE false
+exploit
