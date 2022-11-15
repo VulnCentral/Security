@@ -1,3 +1,12 @@
+https://securitytrails.com/blog/nmap-scripts-nse
+https://www.cybervie.com/blog/nmap-and-useful-nse-scripts/
+
+# nmap -sV --script=vulscan/vulscan.nse google.com
+#nmap --script smb-brute.nse -p445 
+sudo nmap -sU -sS --script smb-brute.nse -p U:137,T:139 
+nmap --script http-enum 192.168.10.55
+
+
 nmap -T4 -sV -v -p 80 192.168.60.0/24
 nmap -sS -sV -T5 192.168.111.131
 nmap -sTUV 192.168.56.101
