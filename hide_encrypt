@@ -1,7 +1,15 @@
 
 
+https://www.youtube.com/watch?v=l6-P9wwAoU8
+
 (W) CryptTool -> Enc/Dec -> Algo / Analysis -> Sym- >
-snow
+Analysis->Symetric Encryption->choose method->
+Put ZEROs after *
+START
+Column Key contains KEY
+
+
+SNOW
 Stego
 	hello world > original.txt
 	snow -C -m "ACCOUNT NUMBER 123" -p "magic" original.txt stegoed.txt
