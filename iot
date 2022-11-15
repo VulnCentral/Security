@@ -1,0 +1,19 @@
+
+protocols:
+mqtt
+
+shodan
+mqtt
+port:1883
+
+modbus
+port:502
+
+plc name
+"Shneider Electric"
+
+tools
+mqtt explorer
+(GUI)
+
+wireshark filter mqtt
