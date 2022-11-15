@@ -25,6 +25,15 @@ Stego
 openstego - uses password if given
 quickstego
 
+RAINBOWCRACK
+
+Open winrtgen and add new table
+Select ntlm from Hash dropdown list.
+Set Min Len as 4, Max Len as 6 and Chain Count 4000000
+Select loweralpha from Charset dropdown list (it depends upon Password).
+rcrack_gui.exe to crack hash with rainbow table
+
+
 BCTEXTENCODER
 VERACRYPT
 
