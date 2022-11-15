@@ -1,1 +1,9 @@
 dirb http://192.168.1.168/URL/
+
+
+https://www.zaproxy.org/getting-started/
+
+Start ZAP and click the Quick Start tab of the Workspace Window.
+Click the large Automated Scan button.
+In the URL to attack text box, enter the full URL of the web application you want to attack.
+Click the Attack
