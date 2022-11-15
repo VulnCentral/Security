@@ -15,5 +15,6 @@ set RHOSTS <TARGET_IP>
 set USERNAME <user>
 set PASS_FILE /path to file/
 set TARGETURI <http://<IP>:PORT/PATH>
+set RPORT 1234
 set VERBOSE false
 exploit
