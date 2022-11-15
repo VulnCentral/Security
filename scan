@@ -6,3 +6,42 @@ netdiscover -r 192.168.10.1/24
 nmap 192.168.10.10
 nmap -p- -sV 192.168.56.106
 NMAP -sU -p 161 --script=snmp-brute IP
+
+
+nmap -sV -sC -oA nmap.txt 10.10.10.x
+nmap -sC -sV -v -oN nmap.txt 10.10.10.x
+nmap -sS -P0 -A -v 10.10.10.x
+masscan -e tun0 -pi-65535 --rate=1000
+nmap -sU -sV -A -T4 -v -oN udp.txt 10.10.10.x
+
+
+—------------------------ 
+
+ Nmap -Pn -p 21 target > ftp 
+
+ grep -B 5 open ftp 
+
+ 
+
+ —-------------------------- 
+
+ Nmap -Pn -p 3389 target > rdp 
+
+ grep -B 5 open rdp 
+
+ —------------------------- 
+
+ Nmap -Pn -p 3306 target > mysql 
+
+ grep -B 5 open mysql
+nmap -sn <IP_RANGE> //to check for live hosts
+nmap -sC -A <IP_RANGE> -oA nmap.txt //top #1000 ports + Detailed scan
+
+-p-  scan all ports
+--top-ports
+-sTU - scan UDP/TCP
+-vv very verbose
+-O get OS
+--packet-trace
+-sn only scan 
+    -sn 10.10.10.0/24 -oG dump.txt
