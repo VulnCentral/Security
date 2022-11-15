@@ -1,7 +1,7 @@
 wpscan.rb --url http://<IP>/PATH
 wpscan --url https://<IP>/ --enumerate u
 wpscan --url http://<IP>/ -U 'user_name' -P /path-to/dic.txt
-
+wpscan --no-update --url http://<Target> --usernames <username to bruteforce> --passwords <password file>
 
 ./nikto.pl -h http://<IP>/PATH/
 
